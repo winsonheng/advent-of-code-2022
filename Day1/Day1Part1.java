@@ -1,13 +1,13 @@
 import java.net.*;
 import java.io.*;
 
-public class Day1 {
+public class Day1Part1 {
     public static void main(String[] args) throws FileNotFoundException, IOException {
-        BufferedReader in = new BufferedReader(new FileReader(new File("in.txt")));
+        BufferedReader br = new BufferedReader(new FileReader("1-1.in"));
 
         int highest = 0, current = 0;
         String inputLine;
-        while ((inputLine = in.readLine()) != null) {
+        while ((inputLine = br.readLine()) != null) {
             if (inputLine.isEmpty()) {
                 highest = Math.max(highest, current);
                 current = 0;
@@ -15,7 +15,7 @@ public class Day1 {
                 current += Integer.parseInt(inputLine);
             }
         }
-        in.close();
+        br.close();
 
         System.out.println(highest);
     }
